@@ -1,0 +1,170 @@
+#butterfly_14 {
+    position: absolute;
+            left: 47.7%;
+            top: 31.8%;
+            width: 52.4%;
+            height: 36.1%;
+    z-index:00; 
+    -webkit-transform: rotate(-13deg) translate(0px, 0px) scale(1.0, 1.0);
+    -webkit-transform-origin: top left;
+    -moz-transform: rotate(-13deg) translate(0px, 0px) scale(1.0, 1.0);
+    -moz-transform-origin: top left;
+}
+#butterfly_14.animate {
+    -webkit-animation-name: butterfly_14_ani;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes butterfly_14_ani {
+    from {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: -53.3%;
+        top: 31.8%;
+        -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    }
+}
+#rightwing_14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    background-image: url(../img/wing_14.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -webkit-transform: rotate3d(0, 1, 0, 180deg); /* Mirror left wing */
+    -webkit-transform-origin: center right;
+    -moz-transform: rotate3d(0, 0, 1, 180deg); /* Mirror left wing */
+    -moz-transform-origin: center right;
+   
+}
+#rightwing_14.animate {
+    -webkit-animation-name: rightwingani;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: rightwingani;
+    -moz-animation-duration: 0.1s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes rightwingani {
+    from {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    30% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(0, 1, 0, 100deg);
+    }
+
+    70% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    to {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg);
+    }
+}
+
+@-moz-keyframes rightwingani {
+    from {
+        -moz-transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    30% {
+        -moz-transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    50% {
+        -moz-transform: rotate3d(0, 1, 0, 100deg);
+    }
+
+    70% {
+        -moz-transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    to {
+        -moz-transform: rotate3d(0, 1, 0, 180deg);
+    }
+}
+
+#leftwing_14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    background-image: url(../img/wing_14.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -webkit-transform: rotate(0deg) translate(0px, 0px) scale(1.0, 1.0);
+    -webkit-transform-origin: top right;
+    -moz-transform: rotate(0deg) translate(0px, 0px) scale(1.0, 1.0);
+    -moz-transform-origin: top right;
+}
+#leftwing_14.animate {
+    -webkit-animation-name: leftwingani;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: leftwingani;
+    -moz-animation-duration: 0.1s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes leftwingani {
+    from {
+        -webkit-transform: rotate3d(0, 1, 0, 0deg);
+    }
+
+    30% {
+        -webkit-transform: rotate3d(0, 1, 0, 0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(0, 1, 0, 80deg);
+    }
+
+    70% {
+        -webkit-transform: rotate3d(0, 1, 0, 00deg);
+    }
+
+    to {
+        -webkit-transform: rotate3d(0, 1, 0, 00deg);
+    }
+}
+
+
+@-moz-keyframes leftwingani {
+    from {
+        -moz-transform: rotate3d(0, 1, 0, 0deg);
+    }
+
+    30% {
+        -moz-transform: rotate3d(0, 1, 0, 0deg);
+    }
+
+    50% {
+        -moz-transform: rotate3d(0, 1, 0, 80deg);
+    }
+
+    70% {
+        -moz-transform: rotate3d(0, 1, 0, 00deg);
+    }
+
+    to {
+        -moz-transform: rotate3d(0, 1, 0, 00deg);
+    }
+}
