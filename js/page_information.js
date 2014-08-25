@@ -4,6 +4,11 @@ function obj_swipe() {
                 var click_num = 0;
                 var transitionEnd_num = 0;
                 var event_style = 0;
+                document.getElementById("load_div").style.visibility = 'visible';
+                window.onload = function () {
+                  //$("#load_div").style.visibility = 'visible';
+                  document.getElementById("load_div").style.visibility = 'hidden';
+                };
                 $("#s_00").children("div.target").on( 'animationend webkitAnimationEnd oAnimationEnd',
                  function( event ) { 
                     transitionEnd_num++;
@@ -212,5 +217,5 @@ function obj_swipe() {
             });
 }
 
-
 document.addEventListener('DOMContentLoaded', obj_swipe, false);
+

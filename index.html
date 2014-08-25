@@ -1,99 +1,99 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Jiaey's Faiewell Paity</title>
-    <style type="text/css">
+  <title>Jiaey's Faiewell Paity</title>
+  <style type="text/css">
     body {
       font-family: 'Lobster', serif;
       font-size: 2px;
       color: #00000009;
       /*color: #FFFFFF;*/
       -moz-user-select: -moz-none;
-  }
+    }
   </style>
+  <script type="text/javascript">
+    //weixin
 
-<script type="text/javascript">
-//weixin
-  
-var imgUrl = "http://damon-gao.github.io/img/logo.png";
-var lineLink = "http://damon-gao.github.io";
-var descContent = "Welcome to Jiaey's Faiewell Paity";
-var shareTitle = "Welcome to Jiaey's Faiewell Paity";
-var appid = '';
+    var imgUrl = "http://damon-gao.github.io/img/logo.png";
+    var lineLink = "http://damon-gao.github.io";
+    var descContent = "A New Day Has Come";
+    var shareTitle = "Welcome to Tracy's Farewell Party";
+    var appid = '';
 
-function shareFriend() {
-    WeixinJSBridge.invoke('sendAppMessage',{
-                            "appid": appid,
-                            "img_url": imgUrl,
-                            "img_width": "100",
-                            "img_height": "100",
-                            "link": lineLink,
-                            "desc": descContent,
-                            "title": shareTitle
-                            }, function(res) {
-                            _report('send_msg', res.err_msg);
-                            })
-}
-function shareTimeline() {
-    WeixinJSBridge.invoke('shareTimeline',{
-                            "img_url": imgUrl,
-                            "img_width": "100",
-                            "img_height": "100",
-                            "link": lineLink,
-                            "desc": descContent,
-                            "title": shareTitle
-                            }, function(res) {
-                            _report('timeline', res.err_msg);
-                            });
-}
-function shareWeibo() {
-    WeixinJSBridge.invoke('shareWeibo',{
-                            "content": descContent,
-                            "url": lineLink,
-                            }, function(res) {
-                            _report('weibo', res.err_msg);
-                            });
-}
-document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    function shareFriend() {
+      WeixinJSBridge.invoke('sendAppMessage', {
+        "appid": appid,
+        "img_url": imgUrl,
+        "img_width": "100",
+        "img_height": "100",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+      }, function (res) {
+        _report('send_msg', res.err_msg);
+      })
+    }
+    function shareTimeline() {
+      WeixinJSBridge.invoke('shareTimeline', {
+        "img_url": imgUrl,
+        "img_width": "100",
+        "img_height": "100",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+      }, function (res) {
+        _report('timeline', res.err_msg);
+      });
+    }
+    function shareWeibo() {
+      WeixinJSBridge.invoke('shareWeibo', {
+        "content": descContent,
+        "url": lineLink,
+      }, function (res) {
+        _report('weibo', res.err_msg);
+      });
+    }
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 
-        WeixinJSBridge.on('menu:share:appmessage', function(argv){
-            shareFriend();
-            });
+      WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+        shareFriend();
+      });
 
-        WeixinJSBridge.on('menu:share:timeline', function(argv){
-            shareTimeline();
-            });
+      WeixinJSBridge.on('menu:share:timeline', function (argv) {
+        shareTimeline();
+      });
 
-        WeixinJSBridge.on('menu:share:weibo', function(argv){
-            shareWeibo();
-            });
-        }, false);
+      WeixinJSBridge.on('menu:share:weibo', function (argv) {
+        shareWeibo();
+      });
+    }, false);
 
-</script>
-  <link rel="stylesheet" type="text/css" href="./css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="./css/result-light.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_00.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_01.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_02.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_03.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_04.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_05.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_06.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_07.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_08.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_09.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_10.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_11.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_12.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_13.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_14.css">
-  <link rel="stylesheet" type="text/css" href="./css/butterfly_15.css">
-  <link rel="stylesheet" type="text/css" href="./css/page_01.css">
-  <link rel="stylesheet" type="text/css" href="./css/page_02.css">
-  <link rel="stylesheet" type="text/css" href="./css/page_03_butterfly_00.css">
-  <link rel="stylesheet" type="text/css" href="./css/page_03_butterfly_01.css">
-  <link rel="stylesheet" type="text/css" href="./css/page_03_butterfly_02.css">
-
+   
+  </script>
+  <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="./css/result-light.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_00.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_01.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_02.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_03.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_04.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_05.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_06.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_07.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_08.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_09.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_10.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_11.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_12.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_13.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_14.css" />
+  <link rel="stylesheet" type="text/css" href="./css/butterfly_15.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_01.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_02.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_03_butterfly_00.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_03_butterfly_01.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_03_butterfly_02.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_fng.css" />
 
   <!--<script type="text/javascript" src="./js/mootools-core-1.4.5-nocompat.js"></script>-->
   <!--<script type="text/javascript" src="./js/parabola-min.js"></script>-->
@@ -101,112 +101,115 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
   <script type="text/javascript" src="./js/jquery.touchSwipe.min.js"></script>
 </head>
 <body>
-
-    <div style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%; overflow:hidden;">
-        <img src="./img/bng.jpg" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >
+  <div style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%; overflow:hidden;">
+    <img src="./img/bng.jpg" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" /> </img >
     <div id="s_03" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;">
-        <!--<img id="page_03" src="./img/page_03.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >-->
-        <img id="page_03_txt_00" src="./img/page_03_text_00.png" > </img >
-          <div id="page_03_butterfly_00" class="target">
-            <div id="page_03_leftwing_00" class="target"> </div>
-            <div id="page_03_rightwing_00" class="target"> </div>
-        </div>
-       <div id="page_03_butterfly_01" class="target">
-            <div id="page_03_leftwing_01" class="target"> </div>
-            <div id="page_03_rightwing_01" class="target"> </div>
-        </div>
-       <div id="page_03_butterfly_02" class="target">
-            <div id="page_03_leftwing_02" class="target"> </div>
-            <div id="page_03_rightwing_02" class="target"> </div>
-        </div>
+      <!--<img id="page_03" src="./img/page_03.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >-->
+      <img id="page_03_txt_00" src="./img/page_03_text_00.png" /> </img >
+      <div id="page_03_butterfly_00" class="target">
+        <div id="page_03_leftwing_00" class="target"> </div>
+        <div id="page_03_rightwing_00" class="target"> </div>
+      </div>
+      <div id="page_03_butterfly_01" class="target">
+        <div id="page_03_leftwing_01" class="target"> </div>
+        <div id="page_03_rightwing_01" class="target"> </div>
+      </div>
+      <div id="page_03_butterfly_02" class="target">
+        <div id="page_03_leftwing_02" class="target"> </div>
+        <div id="page_03_rightwing_02" class="target"> </div>
+      </div>
     </div>
     <div id="s_02" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;">
-        <!--<img id="page_02" src="./img/page_02.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >-->
-        <img id="page_02_txt_00" src="./img/page_02_text_00.png" > </img >
+      <!--<img id="page_02" src="./img/page_02.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >-->
+      <img id="page_02_txt_00" src="./img/page_02_text_00.png" /> </img >
     </div>
     <div id="s_01" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%; ">
-        <img id="page_01" src="./img/page_01.gif"> </img >
-        <img id="page_01_txt_00" src="./img/page_01_text_00.png" > </img >
-        <img id="page_01_txt_01" src="./img/page_01_text_01.png" > </img >
-        <img id="page_01_txt_02" src="./img/page_01_text_02.png" > </img >
+      <img id="page_01" src="./img/page_01.gif" /> </img >
+      <img id="page_01_txt_00" src="./img/page_01_text_00.png" /> </img >
+      <img id="page_01_txt_01" src="./img/page_01_text_01.png" /> </img >
+      <img id="page_01_txt_02" src="./img/page_01_text_02.png" /> </img >
     </div>
     <!--<div id="s_00" style="z-index:0; position:absolute; top:0px; left:0px; width:591px; height:886px;">-->
     <div id="s_00" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%; ">
-        <!---<img id="page_00" src="./img/page_00.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >
-       <img id="page_01" src="./img/page_01.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >-->
-        <div id="butterfly_00" class="target">
-            <div id="leftwing_00" class="target"> </div>
-            <div id="rightwing_00" class="target"> </div>
-        </div>
-       <div id="butterfly_01" class="target">
-            <div id="leftwing_01" class="target"> </div>
-            <div id="rightwing_01" class="target"> </div>
-        </div>
-       <div id="butterfly_02" class="target">
-            <div id="leftwing_02" class="target"> </div>
-            <div id="rightwing_02" class="target"> </div>
-        </div>
-       <div id="butterfly_03" class="target">
-            <div id="leftwing_03" class="target"> </div>
-            <div id="rightwing_03" class="target"> </div>
-        </div>
-       <div id="butterfly_04" class="target">
-            <div id="leftwing_04" class="target"> </div>
-            <div id="rightwing_04" class="target"> </div>
-        </div>
-       <div id="butterfly_05" class="target">
-            <div id="leftwing_05" class="target"> </div>
-            <div id="rightwing_05" class="target"> </div>
-        </div>
-       <div id="butterfly_06" class="target">
-            <div id="leftwing_06" class="target"> </div>
-            <div id="rightwing_06" class="target"> </div>
-        </div>
+      <!---<img id="page_00" src="./img/page_00.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >
+      <img id="page_01" src="./img/page_01.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;"> </img >-->
+      <div id="butterfly_00" class="target">
+        <div id="leftwing_00" class="target"> </div>
+        <div id="rightwing_00" class="target"> </div>
+      </div>
+      <div id="butterfly_01" class="target">
+        <div id="leftwing_01" class="target"> </div>
+        <div id="rightwing_01" class="target"> </div>
+      </div>
+      <div id="butterfly_02" class="target">
+        <div id="leftwing_02" class="target"> </div>
+        <div id="rightwing_02" class="target"> </div>
+      </div>
+      <div id="butterfly_03" class="target">
+        <div id="leftwing_03" class="target"> </div>
+        <div id="rightwing_03" class="target"> </div>
+      </div>
+      <div id="butterfly_04" class="target">
+        <div id="leftwing_04" class="target"> </div>
+        <div id="rightwing_04" class="target"> </div>
+      </div>
+      <div id="butterfly_05" class="target">
+        <div id="leftwing_05" class="target"> </div>
+        <div id="rightwing_05" class="target"> </div>
+      </div>
+      <div id="butterfly_06" class="target">
+        <div id="leftwing_06" class="target"> </div>
+        <div id="rightwing_06" class="target"> </div>
+      </div>
       <div id="butterfly_07" class="target">
-            <div id="leftwing_07" class="target"> </div>
-            <div id="rightwing_07" class="target"> </div>
-        </div>
-       <div id="butterfly_08" class="target">
-            <div id="leftwing_08" class="target"> </div>
-            <div id="rightwing_08" class="target"> </div>
-        </div>
-       <div id="butterfly_09" class="target">
-            <div id="leftwing_09" class="target"> </div>
-            <div id="rightwing_09" class="target"> </div>
-        </div>
-       <div id="butterfly_10" class="target">
-            <div id="leftwing_10" class="target"> </div>
-            <div id="rightwing_10" class="target"> </div>
-        </div>
-       <div id="butterfly_11" class="target">
-            <div id="leftwing_11" class="target"> </div>
-            <div id="rightwing_11" class="target"> </div>
-        </div>
-       <div id="butterfly_12" class="target">
-            <div id="leftwing_12" class="target"> </div>
-            <div id="rightwing_12" class="target"> </div>
-        </div>
-       <div id="butterfly_13" class="target">
-            <div id="leftwing_13" class="target"> </div>
-            <div id="rightwing_13" class="target"> </div>
-        </div>
-       <div id="butterfly_14" class="target">
-            <div id="leftwing_14" class="target"> </div>
-            <div id="rightwing_14" class="target"> </div>
-        </div>
-       <div id="butterfly_15" class="target">
-            <div id="wing_15" class="target"> </div>
-        </div>
+        <div id="leftwing_07" class="target"> </div>
+        <div id="rightwing_07" class="target"> </div>
+      </div>
+      <div id="butterfly_08" class="target">
+        <div id="leftwing_08" class="target"> </div>
+        <div id="rightwing_08" class="target"> </div>
+      </div>
+      <div id="butterfly_09" class="target">
+        <div id="leftwing_09" class="target"> </div>
+        <div id="rightwing_09" class="target"> </div>
+      </div>
+      <div id="butterfly_10" class="target">
+        <div id="leftwing_10" class="target"> </div>
+        <div id="rightwing_10" class="target"> </div>
+      </div>
+      <div id="butterfly_11" class="target">
+        <div id="leftwing_11" class="target"> </div>
+        <div id="rightwing_11" class="target"> </div>
+      </div>
+      <div id="butterfly_12" class="target">
+        <div id="leftwing_12" class="target"> </div>
+        <div id="rightwing_12" class="target"> </div>
+      </div>
+      <div id="butterfly_13" class="target">
+        <div id="leftwing_13" class="target"> </div>
+        <div id="rightwing_13" class="target"> </div>
+      </div>
+      <div id="butterfly_14" class="target">
+        <div id="leftwing_14" class="target"> </div>
+        <div id="rightwing_14" class="target"> </div>
+      </div>
+      <div id="butterfly_15" class="target">
+        <div id="wing_15" class="target"> </div>
+      </div>
     </div>
-<!--<img id="up_arrow" src="./img/arrow.png" > </img >-->
-</div>
-</div>
-<div class="container" style="z-index:1; position:absolute; top:0px; left:0px; width:100%; height:100%;DISPLAY: inline-table">
-  <!--<pre class="prettyprint lang-js" data-src="code_1"> </pre>-->
-  <div id="test" class="box" style="z-index:1; top:0px; left:0px; width:100%; height:100%; ">___</div>
-
-  <script type="text/javascript" src="./js/page_information.js"></script>
-</div>
+    <img id="arrow" src="./img/arrow.png" /> </img >
+  </div>
+  </div>
+  <div class="container" style="z-index:1; position:absolute; top:0px; left:0px; width:100%; height:100%;DISPLAY: inline-table">
+    <!--<pre class="prettyprint lang-js" data-src="code_1"> </pre>-->
+    <div id="test" class="box" style="z-index:1; top:0px; left:0px; width:100%; height:100%; ">___</div>
+    <script type="text/javascript" src="./js/page_information.js"></script>
+  </div>
+  <div id="load_div" style="z-index: 1; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background: #000; visibility: hidden;">
+    <div style="text-align: center; ">
+      <div class=" loading" id="loading"></div>
+      <span style="color:#FFFFFF;">页面加载中，请稍候……</span>
+    </div>
+  </div>
 </body>
 </html>
-
