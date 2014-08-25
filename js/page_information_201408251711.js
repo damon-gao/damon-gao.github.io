@@ -1,7 +1,7 @@
 function obj_swipe() {
                 //Enable swiping...
                 var click = 2;
-                var click_num = -1;
+                var click_num = 0;
                 var transitionEnd_num = 0;
                 var event_style = 0;
                 document.getElementById("load_div").style.visibility = 'visible';
@@ -22,7 +22,7 @@ function obj_swipe() {
                         $("#page_01").addClass("animate");
                         $("#page_01").on( 'animationend webkitAnimationEnd oAnimationEnd',obj_page_01_bng_animationend);
                         click_num = 2;
-                        //$("#test").html("s_" +click_num+ " show auto" );
+                        $("#test").html("s_" +click_num+ " show auto" );
                     }
                 } );
                 function obj_page_01_bng_animationend() {
@@ -40,11 +40,6 @@ function obj_swipe() {
                     $("#page_03_butterfly_01").children("div.target").addClass("animate");
                     $("#page_03_butterfly_02").children("div.target").addClass("animate");
                 }
-
-                function fng_show_bng_animationend() {
-                  click_num = 0;
-                }
-                
                 $("#test").swipe(
                 {
                     swipeStatus: function (event, phase, direction, distance, duration, fingers) {
@@ -78,16 +73,7 @@ function obj_swipe() {
                         if (duration > 5000 || distance < 100 ){
                             return ;
                         }
-                        if (click_num == -1) {
-                          
-                          $("#fng_show_00").addClass("animate");
-                          $("#fng_show_00").on('animationend webkitAnimationEnd oAnimationEnd', fng_show_bng_animationend);
-                          document.getElementById("s_00").style.visibility = 'visible';
-                          document.getElementById("s_01").style.visibility = 'visible';
-                          document.getElementById("s_02").style.visibility = 'hidden';
-                          document.getElementById("s_03").style.visibility = 'hidden';
-                          return;
-                        }
+
 
                         if ( direction == "up" ) {
                             if ( click == 2 ) {
@@ -163,7 +149,7 @@ function obj_swipe() {
                            if ( click == 2 ) {
                             click = 1;
 
-                            click_num=click_num<=-1?-1:click_num-1;
+                            click_num=click_num<=0?0:click_num-1;
                             if ( click_num == 0 ) {
                                 document.getElementById("s_00").style.visibility='visible';
                                 document.getElementById("s_01").style.visibility='visible';
@@ -229,15 +215,13 @@ function obj_swipe() {
 
                                 $("#arrow").removeClass("animate");
 
-                            } else if (click_num == -1) {
-                              $("#fng_show_00").removeClass("animate");
                             }
 
                         }
 
 
                     }
-                    //$("#test").html("s_" +click_num+ " show " + direction);
+                    $("#test").html("s_" +click_num+ " show " + direction);
                 },
                 threshold: 200,
                 maxTimeThreshold: 5000,
