@@ -1,10 +1,10 @@
-#arrow {
+#arrow.animate {
   position: absolute;
   z-index: 0;
   left: 47.4%;
-  top: 87.9%;
+  top: 96.5%;
   width: 5.2%;
-  height: 12.1%;
+  height: 3.5%;
   opacity: 0;
   /*background-color: #00ff00;*/
   -webkit-transform-origin: center center;
@@ -22,7 +22,15 @@
   -moz-animation-fill-mode: forwards;
   -moz-animation-delay: -0s;
 }
-
+#arrow {
+  position: absolute;
+  z-index: 0;
+  left: 47.4%;
+  top: 96.5%;
+  width: 5.2%;
+  height: 3.5%;
+  opacity: 0;
+}
 @-webkit-keyframes arrow_ani {
   from {
     opacity: 0;
@@ -36,8 +44,7 @@
     opacity: 0;
   }
 }
-
-.loading {
+#loading {
   background-color: rgba(0,0,0,0);
   border: 5px solid rgba(0,183,229,0.9);
   opacity: .9;
