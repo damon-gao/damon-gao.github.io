@@ -18,7 +18,108 @@ body {
   -moz-user-select: -moz-none;
 }
 </style> 
+<style>
+#page_00 {
+    position:absolute; 
+    z-index:0; 
+    left:0%; 
+    top:0.0%; 
+    width:100%; 
+    height:100%;
+    opacity: 1;
+
+    /*background-color: #00ff00;*/
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+}
+#page_00.animate {
+    -webkit-animation-name: page_00_ani;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0s;
+    -moz-animation-name: page_00_ani;
+    -moz-animation-duration: 1s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -moz-animation-delay: -0s;
+}
+@-webkit-keyframes page_00_ani {
+  from {
+    left:0%; 
+    top:0.0%; 
+    opacity:1;
+}
+to {
+    opacity:0;
+    left:0%; 
+    top:-100.0%; 
+}
+}
+</style>
+
 <script type="text/javascript" src="./js/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.touchSwipe.min.js"></script>
+<script id='code_1'>
+var page_height = document.documentElement.clientHeight;
+var current_page = 0;
+var max_pages= 2;
+var speed = 500;
+
+var pages;
+var image_page;
+
+var swipeOptions = {
+                   swipeStatus: swipeStatus,
+                   allowPageScroll: "horizontal",
+};
+
+$(function () {
+    pages = $("#pages");
+    image_page = $("#image_page");
+    pages.swipe(swipeOptions);
+    // console.log("page"+pages + "  " + page_height);
+    });
+
+
+/**
+ * Catch each phase of the swipe.
+ * move : we drag the div
+ * cancel : we animate back to where we were
+ * end : we animate to the next image
+ */
+                function page_00_animationend() {
+  console.log("page_00_animationend" );
+     document.getElementById("video1").play();
+
+                }
+function swipeStatus(event, phase, direction, distance, duration, fingers) {
+  //If we are moving before swipe, and we are going L or R in X mode, or U or D in Y mode then drag.
+if (duration > 2000 || distance < 100 ) { return ; }
+  console.log(phase + ":" + direction + " " + distance );
+  if (phase == "move" && (direction == "up" || direction == "down")) {
+    var duration = 10;
+
+    if (direction == "up") {
+    } else if (direction == "down") {
+    }
+
+  } else if (phase == "cancel") {
+  } else if (phase == "end") {
+    if (direction == "up") {
+ $("#page_00").addClass("animate");
+                          $("#page_00").on('animationend webkitAnimationEnd oAnimationEnd', page_00_animationend);
+
+    } else if (direction == "down") {
+ $("#page_00").removeClass("animate");
+     document.getElementById("video1").pause();
+document.getElementById("video1").currentTime = 0;
+    }
+  }
+}
+</script>
 
 <script type="text/javascript">
 //weixin
@@ -120,11 +221,18 @@ function onProgress(e){
 
 </head>
 <body>
-<div  >
-  <video id="video1" style="position:absolute; top:0%; left:0px; width:100%; height:100%;" controls poster="./img/bng.png"  preload="auto">
-    <source src="http://happynewyear.dbankcloud.com/video_l8.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<div class="container" >
+  <div id="content" >
+    <div id="pages" >
+      <video id="video1" style="position:absolute; top:0%; left:0px; width:100%; height:100%;" controls poster="./img/bng.png"  preload="auto">
+        <source src="http://happynewyear.dbankcloud.com/video_l8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div id="bar" style=" position:absolute; top:0px; left:0px; width:100%; height:2%; ">
+      </div>
+      <img id="page_00" src="./img/begin.jpg" >
+    </div>
+  </div>
 </div>
 </body>
 </html>
