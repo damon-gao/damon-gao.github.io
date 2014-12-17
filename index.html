@@ -192,10 +192,10 @@ $(document).ready(function () {
     //     video.addEventListener("canplay", function () {
     //       document.getElementById("bar").style.display = "block";
     //       }, false);
-    video.addEventListener("error", function (err) {
-                    errMessage(err);
-                }, true);
-    });
+   // video.addEventListener("error", function (err) {
+   //                 errMessage(err);
+   //             }, true);
+   // });
 function onProgress(e){
   var vid = document.getElementById('video1');
   var percent = null;
@@ -212,7 +212,7 @@ function onProgress(e){
     //    document.getElementById("bar").style.visibility='hidden';
     //  else 
     //    document.getElementById("bar").style.visibility='visible';
-    document.getElementById( "bar").innerHTML="video have loaded:"+ Math.round(percent)+"%"; 
+    //document.getElementById( "bar").innerHTML="video have loaded:"+ Math.round(percent)+"%"; 
     // console.log(percent);
   }
 
@@ -229,7 +229,6 @@ function onProgress(e){
         Your browser does not support the video tag.
       </video>
       <div id="bar" style=" position:absolute; top:0px; left:0px; width:100%; height:2%; ">
-        123123123
       </div>
       <img id="page_00" src="./img/begin.jpg" >
     </div>
