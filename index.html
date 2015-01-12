@@ -1,130 +1,111 @@
-<!DOCTYPE HTML>
-<html lang="en" >
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Happy New Year</title>
-<style type="text/css">
-body {
-  text-align:left;
-  font-family: 'Lobster', serif;
-  font-size: 10px;
-  // color: #00000009;
-  color: #fff;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1),0 1px 3px rgba(0,0,0,0.3),0 3px 5px rgba(0,0,0,0.2),0 5px 10px rgba(0,0,0,0.25);
-  color: #222;
-  text-shadow: 0px 2px 3px #555;
-  -moz-user-select: -moz-none;
-}
-</style> 
-<script type="text/javascript" src="./js/1.8.2/jquery.min.js"></script>
+  <title>A New Day Has Come</title>
 
-<script type="text/javascript">
-//weixin
+  <script type="text/javascript">
+    //weixin
 
-var imgUrl = "http://damon-gao.github.io/img/logo.png";
-var lineLink = "http://damon-gao.github.io";
-var descContent = "Happy New Year!";
-var shareTitle = "";
-var appid = '';
+    var imgUrl = "http://damon.gwb.github.io/img/logo.png";
+    var lineLink = "http://damon.gwb.github.io";
+    var descContent = "Welcome to ***";
+    var shareTitle = "***";
+    var appid = '';
 
-function shareFriend() {
-  WeixinJSBridge.invoke('sendAppMessage', {
-      "appid": appid,
-      "img_url": imgUrl,
-      "img_width": "100",
-      "img_height": "100",
-      "link": lineLink,
-      "desc": descContent,
-      "title": shareTitle
+    function shareFriend() {
+      WeixinJSBridge.invoke('sendAppMessage', {
+        "appid": appid,
+        "img_url": imgUrl,
+        "img_width": "100",
+        "img_height": "100",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
       }, function (res) {
-      _report('send_msg', res.err_msg);
+        _report('send_msg', res.err_msg);
       })
-}
-function shareTimeline() {
-  WeixinJSBridge.invoke('shareTimeline', {
-      "img_url": imgUrl,
-      "img_width": "100",
-      "img_height": "100",
-      "link": lineLink,
-      "desc": descContent,
-      "title": shareTitle
+    }
+    function shareTimeline() {
+      WeixinJSBridge.invoke('shareTimeline', {
+        "img_url": imgUrl,
+        "img_width": "100",
+        "img_height": "100",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
       }, function (res) {
-      _report('timeline', res.err_msg);
+        _report('timeline', res.err_msg);
       });
-}
-function shareWeibo() {
-  WeixinJSBridge.invoke('shareWeibo', {
-      "content": descContent,
-      "url": lineLink,
+    }
+    function shareWeibo() {
+      WeixinJSBridge.invoke('shareWeibo', {
+        "content": descContent,
+        "url": lineLink,
       }, function (res) {
-      _report('weibo', res.err_msg);
+        _report('weibo', res.err_msg);
       });
-}
-document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    }
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 
-    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-      shareFriend();
-      });
-
-    WeixinJSBridge.on('menu:share:timeline', function (argv) {
-      shareTimeline();
+      WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+        shareFriend();
       });
 
-    WeixinJSBridge.on('menu:share:weibo', function (argv) {
-      shareWeibo();
+      WeixinJSBridge.on('menu:share:timeline', function (argv) {
+        shareTimeline();
+      });
+
+      WeixinJSBridge.on('menu:share:weibo', function (argv) {
+        shareWeibo();
       });
     }, false);
 
-</script> 
-<script>
- function errMessage(msg) {
-                // displays an error message for 5 seconds then clears it
-    document.getElementById( "bar").innerHTML="video error:" + msg;
-            }
-$(document).ready(function () {
-    var video = document.getElementById("video1");
-    video.load();
-    // document.getElementById("video1").play();
-    video.addEventListener('progress', onProgress, false);
-    //     video.addEventListener("canplay", function () {
-    //       document.getElementById("bar").style.display = "block";
-    //       }, false);
-   // video.addEventListener("error", function (err) {
-   //                 errMessage(err);
-   //             }, true);
-   // });
-function onProgress(e){
-  var vid = document.getElementById('video1');
-  var percent = null;
 
-  if (vid.buffered.length > 0 && vid.buffered.end && vid.duration) {
-    percent = vid.buffered.end(0) / vid.duration;
-  } else if (vid.bytesTotal != undefined && vid.bytesTotal > 0 && vid.bufferedBytes != undefined) {
-    percent = vid.bufferedBytes / vid.bytesTotal;
-  }
+  </script>
 
-  if (percent !== null) {
-    percent = 100 * Math.min(1, Math.max(0, percent));
-    //  if ( percent > 90 )
-    //    document.getElementById("bar").style.visibility='hidden';
-    //  else 
-    //    document.getElementById("bar").style.visibility='visible';
-    //document.getElementById( "bar").innerHTML="video have loaded:"+ Math.round(percent)+"%"; 
-    // console.log(percent);
-  }
 
-}
-</script>
+  <link rel="stylesheet" href="http://www.dowebok.com/demo/2014/77/css/jquery.fullPage.css" />
+
+<script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+ <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
+ <script src="http://www.dowebok.com/demo/2014/77/js/jquery.fullPage.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/share.css" />
+ <!---   <script type="text/javascript" src="./js/1.8.2/jquery.min.js"></script> --->
+ <!---   <script type="text/javascript" src="./js/func.min.js"></script> --->
+ <!---   <script type="text/javascript" src="./js/fullPage/jquery.fullPage.js"></script> --->
+  <script>
+    $(document).ready(function () {
+      $.fn.fullpage({
+        slidesColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+        menu: '#menu'
+      });
+
+    });
+  </script>
 
 </head>
 <body>
-<div  >
-  <video id="video1" style="position:absolute; top:0%; left:0px; width:100%; height:100%;" controls poster="./img/bng.png"  preload="auto">
-    <source src="http://happynewyear.dbankcloud.com/video_02.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+  <div>
+    <div class="section">
+      <img src="./img/bng_00.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" />
+
+      <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
+        <img src="./img/arrow_00.png" style="height: 20px;" />
+      </div>
+    </div>
+    <div class="section">
+      <img src="./img/bng_01.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" />
+      <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
+        <img src="./img/arrow_01.png" style="height: 20px;" />
+      </div>
+    </div>
+    <div class="section">
+      <img src="./img/bng_02.png" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" />
+
+    </div>
+
+  </div>
 </body>
 </html>
