@@ -79,13 +79,13 @@
       window.onload = function () {
         //$("#load_div").style.visibility = 'visible';
         document.getElementById("load_div").style.visibility = 'hidden';
+        var audio1 = document.getElementById("audio1");
+        if (audio1 !== null) {
+          audio1.play();
+        }
+        console.log("loaded");
       };
-      var audio1 = document.getElementById("audio1");
-      if (audio1 !== null) {
-        audio1.play();
-      }
 
-      document.getElementById("load_div").style.visibility = 'hidden';
       console.log("123");
     }
     $(document).ready(function () {
