@@ -1,30 +1,52 @@
-ï»¿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title></title>
 
-  <script type="text/javascript">
-    //weixinç¾å¦†ç”µå­å•†åŠ¡å…±åˆ›ä¼š
 
-    var descContent = "ä¸½äººä¸½å¦†2015ç¾å¦†ç”µå­å•†åŠ¡å…±åˆ›ä¼š";
-    var imgUrl = "http://damon-gao.github.io/img/logo.png";
+
+  <link rel="stylesheet" href="http://www.dowebok.com/demo/2014/77/css/jquery.fullPage.css" />
+  <script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="http://www.dowebok.com/demo/2014/77/js/jquery.fullPage.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/share.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_fng.css" />
+  <!---   <script type="text/javascript" src="./js/1.8.2/jquery.min.js"></script> --->
+  <!---   <script type="text/javascript" src="./js/func.min.js"></script> --->
+  <!---   <script type="text/javascript" src="./js/fullPage/jquery.fullPage.js"></script> --->
+  <script>
+    function loaded() {
+      document.getElementById("load_div").style.visibility = 'visible';
+      window.onload = function () {
+        //$("#load_div").style.visibility = 'visible';
+        document.getElementById("load_div").style.visibility = 'hidden';
+        var audio1 = document.getElementById("audio1");
+        if (audio1 !== null) {
+          audio1.play();
+        }
+      };
+
+    }
+    $(document).ready(function () {
+      $.fn.fullpage({
+        slidesColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+        menu: '#menu'
+      });
+    }
+    );
+
+    document.addEventListener('DOMContentLoaded', loaded, false);
+  </script>
+
+  <script type="text/javascript">
+    var imgUrl = "http://damon-gao.github.io/img/logo.jpg";
     var lineLink = "http://damon-gao.github.io";
-    var shareTitle = " ";
+    var shareTitle = "ÀöÈËÀö×±2015ÃÀ×±µç×ÓÉÌÎñ¹²´´»á";
+    var descContent = "ÀöÈËÀö×±2015ÃÀ×±µç×ÓÉÌÎñ¹²´´»á";
     var appid = '';
 
-    function shareFriend() {
-      WeixinJSBridge.invoke('sendAppMessage', {
-        "appid": appid,
-        "img_url": imgUrl,
-        "img_width": "100",
-        "img_height": "100",
-        "link": lineLink,
-        "desc": descContent,
-        "title": shareTitle
-      }, function (res) {
-        _report('send_msg', res.err_msg);
-      })
-    }
     function shareTimeline() {
       WeixinJSBridge.invoke('shareTimeline', {
         "img_url": imgUrl,
@@ -34,7 +56,7 @@
         "desc": descContent,
         "title": shareTitle
       }, function (res) {
-        _report('timeline', res.err_msg);
+       // _report('timeline', res.err_msg);
       });
     }
     function shareWeibo() {
@@ -42,9 +64,23 @@
         "content": descContent,
         "url": lineLink,
       }, function (res) {
-        _report('weibo', res.err_msg);
+       // _report('weibo', res.err_msg);
       });
     }
+    function shareFriend() {
+      WeixinJSBridge.invoke('sendAppMessage', {
+        "appid": appid,
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+      }, function (res) {
+       // _report('send_msg', res.err_msg);
+      })
+    }
+
     document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 
       WeixinJSBridge.on('menu:share:appmessage', function (argv) {
@@ -61,47 +97,6 @@
     }, false);
 
   </script>
-
-
-  <link rel="stylesheet" href="http://www.dowebok.com/demo/2014/77/css/jquery.fullPage.css" />
-<script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
- <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
- <script src="http://www.dowebok.com/demo/2014/77/js/jquery.fullPage.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="css/share.css" />
-  <link rel="stylesheet" type="text/css" href="./css/page_fng.css" />
- <!---   <script type="text/javascript" src="./js/1.8.2/jquery.min.js"></script> --->
- <!---   <script type="text/javascript" src="./js/func.min.js"></script> --->
- <!---   <script type="text/javascript" src="./js/fullPage/jquery.fullPage.js"></script> --->
-  <script>
-    function loaded() {
-      document.getElementById("load_div").style.visibility = 'visible';
-      window.onload = function () {
-        //$("#load_div").style.visibility = 'visible';
-        document.getElementById("load_div").style.visibility = 'hidden';
-        var audio1 = document.getElementById("audio1");
-        if (audio1 !== null) {
-          audio1.play();
-        }
-        console.log("loaded");
-      };
-
-      console.log("123");
-    }
-    $(document).ready(function () {
-      $.fn.fullpage({
-        slidesColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
-        anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
-        menu: '#menu'
-      });
-
-      console.log("222");
-    
-    }
-    );
-
-    document.addEventListener('DOMContentLoaded', loaded, false);
-  </script>
 </head>
 <body>
 
@@ -110,12 +105,12 @@
   </audio>
   <div>
     <div class="section">
+      <img src="./img/ff.jpg" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" />
       <img src="./img/bng_00.jpg" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" />
 
       <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
         <img src="./img/arrow_00.png" style="height: 20px;" />
       </div>
-      <img src="./img/logo.png" style="height: 100%; visibility: visible;" />
 
     </div>
     <div class="section">
@@ -132,7 +127,7 @@
   <div id="load_div" style="z-index: 1; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background: #000; visibility: visible;">
     <div style="text-align: center; ">
       <div class=" loading" id="loading"></div>
-      <span style="color:#FFFFFF;">é¡µé¢åŠ è½½ä¸­ï¼Œè¯·ç¨å€™â€¦â€¦</span>
+      <span style="color:#FFFFFF;">Ò³Ãæ¼ÓÔØÖĞ£¬ÇëÉÔºò¡­¡­</span>
     </div>
   </div>
 
