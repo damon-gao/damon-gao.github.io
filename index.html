@@ -3,27 +3,50 @@
 <head>
   <title></title>
 
-  <script type="text/javascript">
 
+
+  <link rel="stylesheet" href="http://www.dowebok.com/demo/2014/77/css/jquery.fullPage.css" />
+  <script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="http://www.dowebok.com/demo/2014/77/js/jquery.fullPage.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/share.css" />
+  <link rel="stylesheet" type="text/css" href="./css/page_fng.css" />
+  <!---   <script type="text/javascript" src="./js/1.8.2/jquery.min.js"></script> --->
+  <!---   <script type="text/javascript" src="./js/func.min.js"></script> --->
+  <!---   <script type="text/javascript" src="./js/fullPage/jquery.fullPage.js"></script> --->
+  <script>
+    function loaded() {
+      document.getElementById("load_div").style.visibility = 'visible';
+      window.onload = function () {
+        //$("#load_div").style.visibility = 'visible';
+        document.getElementById("load_div").style.visibility = 'hidden';
+        var audio1 = document.getElementById("audio1");
+        if (audio1 !== null) {
+          audio1.play();
+        }
+      };
+
+    }
+    $(document).ready(function () {
+      $.fn.fullpage({
+        slidesColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+        menu: '#menu'
+      });
+    }
+    );
+
+    document.addEventListener('DOMContentLoaded', loaded, false);
+  </script>
+
+  <script type="text/javascript">
     var imgUrl = "http://damon-gao.github.io/img/logo.jpg";
     var lineLink = "http://damon-gao.github.io";
-    var descContent = "";
     var shareTitle = "";
+    var descContent = "";
     var appid = '';
 
-    function shareFriend() {
-      WeixinJSBridge.invoke('sendAppMessage', {
-        "appid": appid,
-        "img_url": imgUrl,
-        "img_width": "100",
-        "img_height": "100",
-        "link": lineLink,
-        "desc": descContent,
-        "title": shareTitle
-      }, function (res) {
-        _report('send_msg', res.err_msg);
-      })
-    }
     function shareTimeline() {
       WeixinJSBridge.invoke('shareTimeline', {
         "img_url": imgUrl,
@@ -33,7 +56,7 @@
         "desc": descContent,
         "title": shareTitle
       }, function (res) {
-        _report('timeline', res.err_msg);
+       // _report('timeline', res.err_msg);
       });
     }
     function shareWeibo() {
@@ -41,9 +64,23 @@
         "content": descContent,
         "url": lineLink,
       }, function (res) {
-        _report('weibo', res.err_msg);
+       // _report('weibo', res.err_msg);
       });
     }
+    function shareFriend() {
+      WeixinJSBridge.invoke('sendAppMessage', {
+        "appid": appid,
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+      }, function (res) {
+       // _report('send_msg', res.err_msg);
+      })
+    }
+
     document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 
       WeixinJSBridge.on('menu:share:appmessage', function (argv) {
@@ -59,47 +96,6 @@
       });
     }, false);
 
-  </script>
-
-  <link rel="stylesheet" href="http://www.dowebok.com/demo/2014/77/css/jquery.fullPage.css" />
-  <script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
-  <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
- <script src="http://www.dowebok.com/demo/2014/77/js/jquery.fullPage.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="css/share.css" />
-  <link rel="stylesheet" type="text/css" href="./css/page_fng.css" />
- <!---   <script type="text/javascript" src="./js/1.8.2/jquery.min.js"></script> --->
- <!---   <script type="text/javascript" src="./js/func.min.js"></script> --->
- <!---   <script type="text/javascript" src="./js/fullPage/jquery.fullPage.js"></script> --->
-  <script>
-    function loaded() {
-      document.getElementById("load_div").style.visibility = 'visible';
-      window.onload = function () {
-        //$("#load_div").style.visibility = 'visible';
-        document.getElementById("load_div").style.visibility = 'hidden';
-        var audio1 = document.getElementById("audio1");
-        if (audio1 !== null) {
-          audio1.play();
-        }
-        console.log("loaded");
-      };
-
-      console.log("123");
-    }
-    $(document).ready(function () {
-      $.fn.fullpage({
-        slidesColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
-        anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
-        menu: '#menu'
-      });
-
-      console.log("222");
-    
-    }
-    );
-
-    document.addEventListener('DOMContentLoaded', loaded, false);
   </script>
 </head>
 <body>
