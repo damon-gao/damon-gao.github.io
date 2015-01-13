@@ -60,12 +60,10 @@
       });
     }, false);
 
-
   </script>
 
 
   <link rel="stylesheet" href="http://www.dowebok.com/demo/2014/77/css/jquery.fullPage.css" />
-
 <script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
  <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
  <script src="http://www.dowebok.com/demo/2014/77/js/jquery.fullPage.min.js"></script>
@@ -82,10 +80,22 @@
         menu: '#menu'
       });
 
-    });
+      var audio1 = document.getElementById("audio1");
+      if (audio1 !== null)
+      {
+        audio1.play();
+      }
+      console.log("34567");
+
+    }
+    );
+
   </script>
 </head>
 <body>
+  <audio id="audio1" src="music/bng.mp3" loop=loop>
+    HTML5 audio not supported
+  </audio>
   <div>
     <div class="section">
       <img src="./img/bng_00.jpg" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" />
@@ -93,6 +103,7 @@
       <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
         <img src="./img/arrow_00.png" style="height: 20px;" />
       </div>
+
     </div>
     <div class="section">
       <img src="./img/bng_01.jpg" style="z-index:0; position:absolute; top:0px; left:0px; width:100%; height:100%;" />
@@ -106,6 +117,5 @@
     </div>
 
   </div>
-  <embed src="bng.mp3" autostart="true" hidden="true" loop="true" />
 </body>
 </html>
