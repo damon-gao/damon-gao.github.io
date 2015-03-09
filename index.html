@@ -40,66 +40,53 @@
     );
 
     document.addEventListener('DOMContentLoaded', loaded, false);
+<script src="js/weixin.js"> </script>
   </script>
 
   <script type="text/javascript">
-
-    // 需要分享的内容，请放到ready里
-    WeixinApi.ready(function (Api) {
-      // 微信分享的数据
-      var wxData = {
-        "appId": "", // 服务号可以填写appId
-        "imgUrl": 'http://damon-gao.github.io/img/logo.png',
-        "link": 'http://damon-gao.github.io',
-        "desc": '丽人丽妆2015美妆电子商务共创会邀请函\n\nBeauty E-commerce Gala',
-        "title": ""
-      };
-      // 分享的回调
-      var wxCallbacks = {
-        // 收藏操作是否触发回调，默认是开启的
-        favorite: false,
-        // 用async模式，表示每次分享之前，都需要更新分享内容
-        async: true,
-        // 分享操作开始之前
-        ready: function () {
-          // 你可以在这里对分享的数据进行动态修改：*可以只修改某些字段*
-          //alert("准备分享");
-          // 下面我们只修改标题和图片地址 title :在这里可以单独修改其中的title字段
-          this.dataLoaded({
-            title: '',
-            imgUrl: 'http://damon-gao.github.io/img/logo.png'
-          });
-        },
-        // 分享被用户自动取消
-        cancel: function (resp) {
-          // 你可以在你的页面上给用户一个小Tip，为什么要取消呢？
-          //alert("分享被取消，msg=" + resp.err_msg);
-        },
-        // 分享失败了
-        fail: function (resp) {
-          // 分享失败了，是不是可以告诉用户：不要紧，可能是网络问题，一会儿再试试？
-          //alert("分享失败，msg=" + resp.err_msg);
-        },
-        // 分享成功
-        confirm: function (resp) {
-          // 分享成功了，我们是不是可以做一些分享统计呢？
-          // alert("分享成功，msg=" + resp.err_msg);
-        },
-        // 整个分享过程结束
-        all: function (resp, shareTo) {
-          // 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
-          // alert("分享" + (shareTo ? "到" + shareTo : "") + "结束，msg=" + resp.err_msg);
-        }
-      };
-      // 用户点开右上角popup菜单后，点击分享给好友，会执行下面这个代码
-      Api.shareToFriend(wxData, wxCallbacks);
-      // 点击分享到朋友圈，会执行下面这个代码
-      Api.shareToTimeline(wxData, wxCallbacks);
-      // 点击分享到腾讯微博，会执行下面这个代码
-      Api.shareToWeibo(wxData, wxCallbacks);
-      // iOS上，可以直接调用这个API进行分享，一句话搞定
-      Api.generalShare(wxData, wxCallbacks);
-    });
+  wx.config({
+  debug: false,
+  appId: '***',
+  timestamp: 1421142450,
+  nonceStr: '***',
+  signature: '***',
+  jsApiList: [
+  'checkJsApi',
+  'onMenuShareTimeline',
+  'onMenuShareAppMessage',
+  'onMenuShareQQ',
+  'onMenuShareWeibo',
+  'hideMenuItems',
+  'showMenuItems',
+  'hideAllNonBaseMenuItem',
+  'showAllNonBaseMenuItem',
+  'translateVoice',
+  'startRecord',
+  'stopRecord',
+  'onRecordEnd',
+  'playVoice',
+  'pauseVoice',
+  'stopVoice',
+  'uploadVoice',
+  'downloadVoice',
+  'chooseImage',
+  'previewImage',
+  'uploadImage',
+  'downloadImage',
+  'getNetworkType',
+  'openLocation',
+  'getLocation',
+  'hideOptionMenu',
+  'showOptionMenu',
+  'closeWindow',
+  'scanQRCode',
+  'chooseWXPay',
+  'openProductSpecificView',
+  'addCard',
+  'chooseCard',
+  'openCard'
+  ]
+  });
 
   </script>
 </head>
@@ -111,21 +98,21 @@
 
   <div id="fullpage">
     <div class="section" style=" background: #000; ">
-      <img src="./img/bng_00.jpg" style="height: 100%;" />
+      <img src="./img/cn_01.jpg" style="height: 100%;" />
       <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
         <img src="./img/arrow_00.png" style="height: 20px;" />
       </div>
 
     </div>
     <div class="section" style=" background: #000; ">
-      <img src="./img/bng_01.jpg" style="height: 100%;" />
+      <img src="./img/cn_02.jpg" style="height: 100%;" />
       <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
         <img src="./img/arrow_01.png" style="height: 20px;" />
       </div>
     </div>
     <div class="section" style=" background: #000; ">
       <div class="cc_obj" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-        <img src="./img/bng_02.jpg" style="height: 100%;" />
+        <img src="./img/cn_03.jpg" style="height: 100%;" />
       </div>
     </div>
     <div id="load_div" style="z-index: 1; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background: #000; visibility: visible;">
