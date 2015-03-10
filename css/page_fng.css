@@ -149,3 +149,21 @@
         -webkit-transform: rotate(360deg);
     };
 }
+#flash_view.animate {
+    -webkit-animation-name: flash_view_ani;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes flash_view_ani {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity:0;
+  }
+  to {
+    opacity: 0;
+  }
+}
