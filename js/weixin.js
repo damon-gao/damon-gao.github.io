@@ -12,7 +12,7 @@
   wx.config({
       debug: false,
       appId: '***',
-      timestamp: 1421142450,
+      timestamp: 000,
       nonceStr: '***',
       signature: '***',
       jsApiList: [
