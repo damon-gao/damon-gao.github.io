@@ -150,6 +150,8 @@
     };
 }
 .flash_view {
+-webkit-transform-origin: center center;
+-moz-transform-origin: center center;
     -webkit-animation-name: flash_view_ani;
     -webkit-animation-duration: 1.5s;
     -webkit-animation-iteration-count: infinite;
