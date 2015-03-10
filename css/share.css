@@ -137,9 +137,19 @@ p{
     70%   { transform: translate3d(0, 10px, 0); -webkit-transform: translate3d(0, 10px, 0); }
     100% { transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); }
 }
+@-webkit-keyframes flash-animation {
+    0%   { transform: scale(1); -webkit-transform: scale(1); }
+    50%   { transform: scale(1.1); -webkit-transform: scale(1.1); }
+    70%   { transform: scale(1.1); -webkit-transform: scale(1.1); }
+    100% { transform: scale(1); -webkit-transform: scale(1); }
+}
 .spring {
     animation: spring-animation 1s infinite cubic-bezier(.10, .10, .25, .90);
     -webkit-animation: spring-animation 1s infinite cubic-bezier(.10, .10, .25, .90);
+}
+.flash_view {
+  animation:flash-animation 1.5s infinite  cubic-bezier(.10, .10, .25, .90);
+  -webkit-animation: flash-animation 1.5s infinite cubic-bezier(.10, .10, .25, .90);
 }
 .background-image{
     background-color: black;
