@@ -149,7 +149,7 @@
         -webkit-transform: rotate(360deg);
     };
 }
-#flash_view.animate {
+#flash_view {
     -webkit-animation-name: flash_view_ani;
     -webkit-animation-duration: 1.5s;
     -webkit-animation-iteration-count: infinite;
