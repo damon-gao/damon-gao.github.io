@@ -11,10 +11,10 @@
    */
   wx.config({
       debug: false,
-      appId: '***',
-      timestamp: 000,
-      nonceStr: '***',
-      signature: '***',
+      appId: '<?php echo $signPackage["appId"];?>',
+      timestamp: <?php echo $signPackage["timestamp"];?>,
+      nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+      signature: '<?php echo $signPackage["signature"];?>',
       jsApiList: [
         'checkJsApi',
         'onMenuShareTimeline',
@@ -80,10 +80,10 @@ wx.ready(function () {
   // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
   document.querySelector('#onMenuShareAppMessage').onclick = function () {
     wx.onMenuShareAppMessage({
-      title: '***',
-      desc: '***',
-      link: '***',
-      imgUrl: '***',
+      title: '3.15 WWF&ARF 签订战略合作新闻发布会',
+      desc: '3.15 WWF&ARF 签订战略合作新闻发布会',
+      link: 'http://damon.pe3b.com/',
+      imgUrl: './img/cn_btn.png',
       trigger: function (res) {
         alert('用户点击发送给朋友');
       },
@@ -102,9 +102,9 @@ wx.ready(function () {
   // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
   document.querySelector('#onMenuShareTimeline').onclick = function () {
     wx.onMenuShareTimeline({
-      title: '***',
-      link: '***',
-      imgUrl: '***',
+      title: '3.15 WWF&ARF 签订战略合作新闻发布会',
+      link: 'http://damon.pe3b.com/',
+      imgUrl: './img/cn_btn.png',
       trigger: function (res) {
         alert('用户点击分享到朋友圈');
       },
@@ -123,10 +123,10 @@ wx.ready(function () {
   // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
   document.querySelector('#onMenuShareQQ').onclick = function () {
     wx.onMenuShareQQ({
-      title: '***',
-      desc: '***',
-      link: '***',
-      imgUrl: '**/**.jpg',
+      title: '3.15 WWF&ARF 签订战略合作新闻发布会',
+      desc: '3.15 WWF&ARF 签订战略合作新闻发布会',
+      link: 'http://damon.pe3b.com/',
+      imgUrl: './img/cn_btn.png',
       trigger: function (res) {
         alert('用户点击分享到QQ');
       },
@@ -149,10 +149,10 @@ wx.ready(function () {
   // 2.4 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
   document.querySelector('#onMenuShareWeibo').onclick = function () {
     wx.onMenuShareWeibo({
-      title: '**',
-      desc: '**',
-      link: '**',
-      imgUrl: '**/**.jpg',
+      title: '标题',
+      desc: '3.15 WWF&ARF 签订战略合作新闻发布会',
+      link: 'http://damon.pe3b.com/',
+      imgUrl: './img/cn_btn.png',
       trigger: function (res) {
         alert('用户点击分享到微博');
       },
