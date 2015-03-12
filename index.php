@@ -5,8 +5,9 @@ $signPackage = $jssdk->GetSignPackage();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
-  <title>3.15 WWF&ARF 签订战略合作新闻发布会</title>
+  <title>INVITATION</title>
   <style>
   body {
     text-align: center;
@@ -35,7 +36,168 @@ $signPackage = $jssdk->GetSignPackage();
     };
   }
   $(document).ready(function () {
-    $('#fullpage').fullpage();
+    $('#fullpage').fullpage({
+		afterLoad: function(anchorLink, index){
+			if(index == 2){
+        $('.cn_div2').delay(100).animate({
+          top: '0',
+          opacity: '1'
+				}, 2000, 'easeOutExpo');
+        $('.en_div2').delay(100).animate({
+            top: '0',
+            opacity: '1'
+  				}, 2000, 'easeOutExpo');
+
+            $('.cn_div2_01').delay(200).animate({
+              top: '0',
+              opacity: '1'
+    				}, 2000, 'easeOutExpo');
+            $('.en_div2_01').delay(200).animate({
+                top: '0',
+                opacity: '1'
+      				}, 2000, 'easeOutExpo');
+
+			}
+			if(index == 3){
+        $('.cn_div3').delay(100).animate({
+          left: '0',
+          opacity: '1'
+				}, 2000, 'easeOutExpo');
+       $('.en_div3').delay(100).animate({
+         left: '0',
+            opacity: '1'
+  				}, 2000, 'easeOutExpo');
+            $('.cn_div3_01').delay(200).animate({
+              left: '0',
+              opacity: '1'
+    				}, 2000, 'easeOutExpo');
+           $('.en_div3_01').delay(200).animate({
+             left: '0',
+                opacity: '1'
+      				}, 2000, 'easeOutExpo');
+			}
+			if(index == 4){
+        $('.cn_div4').delay(100).animate({
+					top: '0',
+          opacity: '1'
+				}, 2000, 'easeOutExpo');
+        $('.en_div4').delay(100).animate({
+            top: '0',
+            opacity: '1'
+  				}, 2000, 'easeOutExpo');
+			}
+			if(index == 5){
+        $('.cn_div5').delay(100).animate({
+					top: '0',
+          opacity: '1'
+				}, 2000, 'easeOutExpo');
+        $('.en_div5').delay(100).animate({
+            top: '0',
+            opacity: '1'
+  				}, 2000, 'easeOutExpo');
+			}
+			if(index == 6){
+        $('.cn_div6').delay(100).animate({
+					top: '0',
+          opacity: '1'
+				}, 2000, 'easeOutExpo');
+        $('.en_div6').delay(100).animate({
+            top: '0',
+            opacity: '1'
+  				}, 2000, 'easeOutExpo');
+			}
+			if(index == 7){
+        $('.cn_div7').delay(100).animate({
+          left: '0',
+          opacity: '1'
+				}, 2000, 'easeOutExpo');
+        $('.en_div7').delay(100).animate({
+          left: '0',
+            opacity: '1'
+  				}, 2000, 'easeOutExpo');
+			}
+		},
+		onLeave: function(index, direction){
+      if(index == 2){
+        $('.cn_div2').delay(100).animate({
+          top: '-10',
+          opacity: '0'
+				}, 1500, 'easeOutExpo');
+        $('.en_div2').delay(100).animate({
+            top: '-10',
+            opacity: '0'
+  				}, 1500, 'easeOutExpo');
+                      $('.cn_div2_01').delay(200).animate({
+                        top: '1000',
+                        opacity: '0'
+              				}, 1500, 'easeOutExpo');
+                      $('.en_div2_01').delay(200).animate({
+                          top: '1000',
+                          opacity: '0'
+                				}, 1500, 'easeOutExpo');
+
+			}
+			if(index == 3){
+        $('.cn_div3').delay(100).animate({
+          left: '-10',
+          opacity: '0'
+				}, 1500, 'easeOutExpo');
+       $('.en_div3').delay(100).animate({
+         left: '-10',
+            opacity: '0'
+  				}, 1500, 'easeOutExpo');
+
+            $('.cn_div3_01').delay(200).animate({
+              left: '10',
+              opacity: '0'
+    				}, 1500, 'easeOutExpo');
+           $('.en_div3_01').delay(200).animate({
+             left: '10',
+                opacity: '0'
+      				}, 1500, 'easeOutExpo');
+			}
+			if(index == 4){
+        $('.cn_div4').delay(100).animate({
+					top: '1000',
+          opacity: '0'
+				}, 1500, 'easeOutExpo');
+        $('.en_div4').delay(100).animate({
+            top: '1000',
+            opacity: '0'
+  				}, 1500, 'easeOutExpo');
+			}
+			if(index == 5){
+        $('.cn_div5').delay(100).animate({
+					top: '10',
+          opacity: '0'
+				}, 1500, 'easeOutExpo');
+        $('.en_div5').delay(100).animate({
+            top: '10',
+            opacity: '0'
+  				}, 1500, 'easeOutExpo');
+			}
+			if(index == 6){
+        $('.cn_div6').delay(100).animate({
+					top: '1000',
+          opacity: '0'
+				}, 1500, 'easeOutExpo');
+        $('.en_div6').delay(100).animate({
+            top: '1000',
+            opacity: '0'
+  				}, 1500, 'easeOutExpo');
+			}
+			if(index == 7){
+        $('.cn_div7').delay(100).animate({
+					left: '10',
+          opacity: '0'
+				}, 1500, 'easeOutExpo');
+        $('.en_div7').delay(100).animate({
+          left: '10',
+            opacity: '0'
+  				}, 1500, 'easeOutExpo');
+			}
+		}
+	});
   }
 );
 
@@ -76,12 +238,59 @@ function nosound()
 };
 function jump_map()
 {
-  location.href="http://j.map.baidu.com/emvTv";
+  //location.href="http://j.map.baidu.com/9TGM0";
+    location.href="http://t.m.haosou.com/t/jecr7";
 };
 </script>
 <!--  <script type="text/javascript"  src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"> </script>
 <script type="text/javascript" src="js/weixin.js"> </script>-->
+<script type="text/javascript">
+wx.config({
+debug: false,
+    appId: '<?php echo $signPackage["appId"];?>',
+    timestamp: <?php echo $signPackage["timestamp"];?>,
+    nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+    signature: '<?php echo $signPackage["signature"];?>',
+jsApiList: [
+'checkJsApi',
+'onMenuShareTimeline',
+'onMenuShareAppMessage',
+'onMenuShareQQ',
+'onMenuShareWeibo',
+'hideMenuItems',
+'showMenuItems',
+'hideAllNonBaseMenuItem',
+'showAllNonBaseMenuItem',
+'translateVoice',
+'startRecord',
+'stopRecord',
+'onRecordEnd',
+'playVoice',
+'pauseVoice',
+'stopVoice',
+'uploadVoice',
+'downloadVoice',
+'chooseImage',
+'previewImage',
+'uploadImage',
+'downloadImage',
+'getNetworkType',
+'openLocation',
+'getLocation',
+'hideOptionMenu',
+'showOptionMenu',
+'closeWindow',
+'scanQRCode',
+'chooseWXPay',
+'openProductSpecificView',
+'addCard',
+'chooseCard',
+'openCard'
+]
+});
+</script>
 
+<script type="text/javascript" src="./js/weixin.js"></script>
 </head>
 <body>
   <audio id="audio1" src="music/bng.mp3" loop=loop>
@@ -93,10 +302,10 @@ function jump_map()
       <img src="./img/begin.jpg" style="width: 100%;height: 100%;"/>
 
       <div class="sound_div hides" style="z-index: 0; position: absolute; top: 5%; left: 0%; width: 100%; height: 100%;">
-        <img src="./img/no_sound.png" style="padding-left:60%; left: 0%; height: 5%;" onclick="sound()"/>
+        <img src="./img/no_sound.png" style="padding-left:60%; left: 0%; height: 3%;" onclick="sound()"/>
       </div>
       <div class="nosound_div" style="z-index: 0; position: absolute; top: 5%; left: 0%; width: 100%; height: 100%;">
-        <img src="./img/sound.png" style="padding-left:60%; left: 0%; height: 5%;" onclick="nosound()"/>
+        <img src="./img/sound.png" style="padding-left:60%; left: 0%; height: 3%;" onclick="nosound()"/>
       </div>
       <div style="z-index: 0; position: absolute; top: 93%; left: 0%; width: 100%; height: 100%;">
         <img src="./img/cn_btn.png" style="padding-left:40%; left: 0%; height: 2%;" onclick="cn()"/>
@@ -125,39 +334,22 @@ function jump_map()
       <img src="./img/arrow_01.png" style="height: 20px;" />
     </div>
   </div>
-  <div class="section" style=" background: #FFFFFF; ">
 
-        <div class="cn_div" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-          <img src="./img/cn_bng_03.jpg" style="width: 100%;height: 100%;" />
-        </div>
-        <div class="en_div hides" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-          <img src="./img/en_bng_03.jpg" style="width: 100%;height: 100%;" />
-        </div>
-    <div class="down-icon spring" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-      <img src="./img/arrow_00.png" style="height: 20px;" />
-    </div>
-    <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
-      <img src="./img/arrow_01.png" style="height: 20px;" />
-    </div>
-  </div>
-  <div class="section" style=" background: #FFFFFF; ">
+    <div class="section" style=" background: #FFFFFF; ">
 
-        <div class="cn_div" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-          <img src="./img/cn_bng_04.jpg" style="width: 100%;height: 100%;" />
-        </div>
-        <div class="en_div hides" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-          <img src="./img/en_bng_04.jpg" style="width: 100%;height: 100%;" />
-        </div>
-    <div class="down-icon spring" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-      <img src="./img/arrow_00.png" style="height: 20px;" />
+          <div class="cn_div" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+            <img src="./img/cn_bng_03.jpg" style="width: 100%;height: 100%;" />
+          </div>
+          <div class="en_div hides" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+            <img src="./img/en_bng_03.jpg" style="width: 100%;height: 100%;" />
+          </div>
+      <div class="down-icon spring" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+        <img src="./img/arrow_00.png" style="height: 20px;" />
+      </div>
+      <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
+        <img src="./img/arrow_01.png" style="height: 20px;" />
+      </div>
     </div>
-    <div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
-      <img src="./img/arrow_01.png" style="height: 20px;" />
-    </div>
-<div style="z-index: 0; position: absolute; top: 0%; left: 0%; margin-left: auto;margin-right: auto; width: 100%; height: 100%;">
-  <img class="flash_view"  src="./img/cn_black_04.png" style="width:100%;height: 100%;" onclick="jump_map()"/>
-</div>
-  </div>
   <div class="section" style=" background: #FFFFFF; ">
 
         <div class="cn_div" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
@@ -187,15 +379,34 @@ function jump_map()
 
   <div class="section" style=" background: #FFFFFF; ">
 
-        <div class="cn_div" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-          <img src="./img/cn_bng_07.jpg" style="width: 100%;height: 100%;" />
-        </div>
-        <div class="en_div hides" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-          <img src="./img/en_bng_07.jpg" style="width: 100%;height: 100%;" />
-        </div>
-    <div class="down-icon spring" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
-      <img src="./img/arrow_00.png" style="height: 20px;" />
+    <div class="cn_div" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+      <img src="./img/cn_bng_07.jpg" style="width: 100%;height: 100%;" />
     </div>
+    <div class="en_div hides" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+      <img src="./img/en_bng_07.jpg" style="width: 100%;height: 100%;" />
+    </div>
+<div class="down-icon spring" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+  <img src="./img/arrow_00.png" style="height: 20px;" />
+</div>
+<div class="down-icon spring" style="z-index: 0; position: absolute; top: 96%; left: 0%; width: 100%; height: 100%;">
+  <img src="./img/arrow_01.png" style="height: 20px;" />
+</div>
+  </div>
+  <div class="section" style=" background: #FFFFFF; ">
+
+                    <div class="cn_div" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+                      <img src="./img/cn_bng_04.jpg" style="width: 100%;height: 100%;" />
+                    </div>
+                    <div class="en_div hides" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+                      <img src="./img/en_bng_04.jpg" style="width: 100%;height: 100%;" />
+                    </div>
+
+        <div class="down-icon spring" style="z-index: 0; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+          <img src="./img/arrow_00.png" style="height: 20px;" />
+        </div>
+        <div style="z-index: 0; position: absolute; top: 0%; left: 0%; margin-left: auto;margin-right: auto; width: 100%; height: 100%;">
+        <img class="flash_view"  src="./img/cn_black_04.png" style="width:100%;height: 100%;" onclick="jump_map()"/>
+        </div>
   </div>
   <div id="load_div" style="z-index: 1; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background: #000; visibility: visible;">
     <div style="text-align: center; ">
@@ -203,7 +414,6 @@ function jump_map()
       <span style="color:#000;">页面加载中，请稍候……</span>
     </div>
   </div>
-
 </div>
 </body>
 </html>
